@@ -23,10 +23,13 @@ class HomeController extends Controller
 
         // Himpunan
         $data['candidates2'] = Candidate::orderBy('number')->where('type', 'him')->get()->groupBy('jurusan');
+
         $getMemberCountHim = DB::table('members')
             ->select('jurusan', DB::raw('count(*) as total'))
             ->groupBy('jurusan')
             ->get();
+
+        return $getMemberCountHim;
 
         foreach ($getMemberCountHim as $item) {
             $data['member_count_2'][$item->jurusan] = $item->total;
