@@ -199,7 +199,7 @@
     </div>
 
     {{-- Suksesi Himpunan --}}
-    <div class="row">
+    <div class="col-xl-12 col-lg-12">
         <h4>Suksesi Himpunan</h4>
     </div>
     @foreach ($candidates2 as $jurusan => $collection)
