@@ -249,6 +249,57 @@
     @endforeach
     {{-- End of Suksesi Himpunant --}}
 
+    {{-- Pemilihan Senator --}}
+    <div class="col-xl-12 col-lg-12">
+        <h4>Pemilihan Senator</h4>
+    </div>
+    @foreach ($candidates3 as $jurusan => $collection)
+    <div class="col-xl-6 col-lg-6 col-md-6">
+        <!--begin:: Widgets/Best Sellers-->
+        <div class="kt-portlet kt-portlet--height-fluid">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Rekapitulasi Pemilihan pada Jurusan {{ $jurusan }}
+                    </h3>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+                <div class="kt-widget5">
+                    @foreach ($collection as $item)
+                    <div class="kt-widget5__item">
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__pic">
+                                <img class="kt-widget7__img" src="{{ $item->image }}" alt="">
+                                @if ($item->image_vice)
+                                <img class="kt-widget7__img" src="{{ $item->image_vice }}" alt="">
+                                @endif
+                            </div>
+                            <div class="kt-widget5__section">
+                                <h5 class="kt-widget5__title text-muted font-weight-light">Nomor : {{ $item->number }}
+                                </h5>
+                                <strong class="kt-widget5__desc font-weight-bold">{{ $item->name }}</strong>
+                            </div>
+                        </div>
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__stats">
+                                @php $votingCount = isset($voting_count_3[$jurusan]) ? $voting_count_3[$jurusan] : 1;
+                                @endphp
+                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting2) }} ({{
+                                    sprintf('%.2f%%', (count($item->voting3) / ($votingCount ?: 1)) * 100) }})</span>
+                                <span class="kt-widget5__votes">suara</span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <!--end:: Widgets/Best Sellers-->
+    </div>
+    @endforeach
+    {{-- End of Suksesi Himpunant --}}
+
 
     @endif
     @if (!$time_end)
