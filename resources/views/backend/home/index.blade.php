@@ -199,7 +199,7 @@
     </div>
 
     @foreach ($candidates2 as $jurusan => $collection)
-    <div class="col-xl-12 col-lg-12">
+    <div class="col-xl-6 col-lg-6 col-md-6">
         <!--begin:: Widgets/Best Sellers-->
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-portlet__head">
