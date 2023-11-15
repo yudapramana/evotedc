@@ -93,7 +93,7 @@
                     @endforeach
 
                 </div>
-                <div class="kt-widget14__content">
+                <div class="kt-widget14__content" style="margin-top:50px !important;">
                     <div class="flex mr-5">
                         <h4 class="wiheight">
                             PEMIRA 2022
