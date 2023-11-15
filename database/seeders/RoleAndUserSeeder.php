@@ -26,7 +26,7 @@ class RoleAndUserSeeder extends Seeder
             'last_name' => 'DukungCalonmu',
             'email' => 'dev@dukungcalonmu.com',
             'username'=> 'developer',
-            'password' => Hash::make('2019GantiAtauTetap?')
+            'password' => Hash::make('developer2023')
         ]);
         $userDeveloper->syncRoles([$developer]);
 
