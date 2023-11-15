@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('nim');
             $table->string('email');
             $table->string('jurusan');
+            $table->string('angkatan');
             $table->string('voter_key');
             $table->timestamps();
         });
