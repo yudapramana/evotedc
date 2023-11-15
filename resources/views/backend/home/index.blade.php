@@ -89,7 +89,7 @@
                 </div>
                 <div class="kt-widget14__content">
                     <div class="flex mr-5">
-                        {{-- <h4>
+                        <h4>
                             PEMIRA 2022
                         </h4>
                         <hr>
@@ -111,7 +111,8 @@
                         <h3>
                             {{ $member_count - $voting_count }} ({{ sprintf('%.2f%%', (($member_count - $voting_count) /
                             ($member_count ?: 1)) * 100) }})
-                        </h3> --}}
+                        </h3>
+
                     </div>
                     @foreach ($member_count_3 as $key => $item)
                     <div class="flex mr-5">
