@@ -21,6 +21,8 @@ class CandidateController extends Controller
         session()->forget(['current_member','finish_vote', 'finish_note']);
         $data['candidates1'] = Candidate::orderBy('number')->where('type','bem')->get();
         $data['candidates2'] = Candidate::orderBy('number')->where('type','him')->get()->groupBy('jurusan');
+        $data['candidates3'] = Candidate::orderBy('number')->where('type','sen')->get()->groupBy('jurusan');
+
         $data['vm'] = false;
 
         return view('frontend.candidates.index', $data);

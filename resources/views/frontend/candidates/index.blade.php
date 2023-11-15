@@ -93,6 +93,43 @@
         @endforeach
     </div>
 
+
+
+    <div class="flex flex-wrap justify-center">
+        @foreach ($candidates3 as $key => $cans)
+        {{-- {{ $key }} --}}
+        <h2 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">PEMILIHAN SENAT {{
+            strtoupper($key) }}
+            DI LINGKUP FEB UNDIP 2023 </h2>
+
+        @foreach ($cans as $k => $item)
+        <div class="py-2 px-2 w-full md:w-1/2 mb-20">
+            {{-- <div class="object-center h-12">
+                <div class="frame-number">
+                    <h1 class="text-5xl m-auto">{{ $item->number }}</h1>
+                </div>
+            </div> --}}
+            <div class="rounded-large overflow-hidden shadow-lg bg-white">
+                <div
+                    class="kandidat-container @if ($item->jurusan == 'Manajemen') manajemen @endif @if ($item->jurusan == 'Akuntansi') akuntansi @endif @if ($item->jurusan == 'Ekonomi Islam') ekonomi-islam @endif @if ($item->jurusan == 'Ekonomi') ekonomi @endif">
+                    <p class="text-center pt-24 text-white px-6 text-2xl mx-auto"
+                        style="font-family: 'Courier New', Courier, monospace!important">{{ $item->name }}</p>
+                </div>
+                <div class="object-center h-10 mt-8 flex">
+                    <img src="{{ $item->image }}" class="kandidat-frame object-cover">
+                    @if ($item->image_vice)
+                    <img src="{{ $item->image_vice }}" class="kandidat-frame object-cover">
+                    @endif
+                </div>
+                <div class="text-center pb-10 pt-10 flex flex-col">
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endforeach
+    </div>
+
     {{-- <h2 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">PEMILIHAN UMUM RAYA FEB UNDIP
         2023 </h2>
     <div class="flex flex-wrap justify-center  mb-20">
@@ -191,7 +228,8 @@
 
 
 
-    </div>
+        {{--
+    </div> --}}
     @endif
 </div>
 @endsection

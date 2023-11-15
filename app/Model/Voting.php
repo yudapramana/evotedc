@@ -10,6 +10,7 @@ class Voting extends Model
     protected $fillable = [
         'candidate_id_1',
         'candidate_id_2',
+        'candidate_id_3',
         'ip',
         'member_id',
         'type'

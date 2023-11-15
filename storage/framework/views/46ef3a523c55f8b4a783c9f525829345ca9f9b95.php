@@ -27,28 +27,28 @@
     </div>
 
 
-    <?php if($jurusan == 'Manajemen'): ?>
+    <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?>
     <div>
         <img class="h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_MSA_avawfa.png"
             alt="Manajemen">
     </div>
     <?php endif; ?>
-    <?php if($jurusan == 'Ekonomi'): ?>
+    <?php if($jurusan == 'Ekonomi S1'): ?>
     <div>
         <img class="h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_-_DESC_crng1v.png"
             alt="Ekonomi">
     </div>
     <?php endif; ?>
-    <?php if($jurusan == 'Ekonomi Islam'): ?>
+    <?php if($jurusan == 'Ekonomi Islam S1'): ?>
     <div>
         <img class="w-32 h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_HMEI_vzjat9.png"
             alt="Ekonomi Islam">
     </div>
     <?php endif; ?>
-    <?php if($jurusan == 'Akuntansi'): ?>
+    <?php if($jurusan == 'Akuntansi S1'): ?>
     <div>
         <img class="w-32 h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/Logo_KMA-1_hpozjc.png"
@@ -113,7 +113,7 @@
                 </div>
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
-                        class="kandidat-container <?php if($jurusan == 'Manajemen'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi'): ?> ekonomi <?php endif; ?>">
+                        class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
                         <p class="text-center pt-24 text-white px-6 text-2xl mx-auto"
                             style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight:bolder;">
                             <?php echo e($item->name); ?></p>
@@ -143,7 +143,7 @@
                 </div>
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
-                        class="kandidat-container <?php if($jurusan == 'Manajemen'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi'): ?> ekonomi <?php endif; ?>">
+                        class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
                         <p class="text-center pt-24 text-white px-6 text-2xl mx-auto"
                             style="font-family: 'Courier New', Courier, monospace!important">Kotak Kosong</p>
                     </div>

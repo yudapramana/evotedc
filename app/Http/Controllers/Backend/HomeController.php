@@ -29,7 +29,6 @@ class HomeController extends Controller
             ->groupBy('jurusan')
             ->get();
 
-        return $getMemberCountHim;
 
         foreach ($getMemberCountHim as $item) {
             $data['member_count_2'][$item->jurusan] = $item->total;

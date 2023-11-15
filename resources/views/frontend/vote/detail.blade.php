@@ -160,10 +160,10 @@
 <script src="{{ asset('__frontend/js/vote-detail.js') }}"></script>
 @else
 <script>
-    var t = 10000;
+    var t = 3000;
 
 
-            var counter = 10;
+            var counter = 3;
             var interval = setInterval(function() {
                 counter--;
                 // Display 'counter' wherever you want to display it.

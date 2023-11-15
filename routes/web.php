@@ -27,6 +27,8 @@ Route::post('vote/check', 'Frontend\VoteController@check')->name('home.vote.chec
 Route::get('vote/detail', 'Frontend\VoteController@detail')->name('home.vote.detail');
 Route::post('vote/store', 'Frontend\VoteController@store')->name('home.vote.store');
 Route::post('vote/store2', 'Frontend\VoteController@store2')->name('home.vote.store2');
+Route::post('vote/store3', 'Frontend\VoteController@store3')->name('home.vote.store3');
+
 Route::post('vote/note', 'Frontend\VoteController@note')->name('home.vote.note');
 /** end vote route */
 

@@ -1,5 +1,4 @@
-@extends('frontend.layouts.plain')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <style>
     .manajemen {
@@ -28,51 +27,49 @@
     </div>
 
 
-    @if ($jurusan == 'Manajemen dan Bisnis Digital S1')
+    <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?>
     <div>
         <img class="h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_MSA_avawfa.png"
             alt="Manajemen">
     </div>
-    @endif
-    @if ($jurusan == 'Ekonomi S1')
+    <?php endif; ?>
+    <?php if($jurusan == 'Ekonomi S1'): ?>
     <div>
         <img class="h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_-_DESC_crng1v.png"
             alt="Ekonomi">
     </div>
-    @endif
-    @if ($jurusan == 'Ekonomi Islam S1')
+    <?php endif; ?>
+    <?php if($jurusan == 'Ekonomi Islam S1'): ?>
     <div>
         <img class="w-32 h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_HMEI_vzjat9.png"
             alt="Ekonomi Islam">
     </div>
-    @endif
-    @if ($jurusan == 'Akuntansi S1')
+    <?php endif; ?>
+    <?php if($jurusan == 'Akuntansi S1'): ?>
     <div>
         <img class="w-32 h-32"
             src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/Logo_KMA-1_hpozjc.png"
             alt="Akuntansi">
     </div>
-    @endif
+    <?php endif; ?>
 
 
 
     <div clas="flex-grow">
 
     </div>
-    {{-- <a href="{{ route('home') }}" class="pb-2 pl-3"> --}}
+    
         <div class="pb-2 pl-5"
             style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight:bolder;">
 
-            {{-- <span class="text-2xl gr-dark-orange text-black pl-3">@yield('title', config('app.name', ''))</span>
-            --}}
-            <span class="text-5xl gr-dark-orange text-black">SUKSESI HIMPUNAN {{ strtoupper($jurusan) }}</span> <br>
+            
+            <span class="text-5xl gr-dark-orange text-black">PEMILIHAN SENAT <?php echo e(strtoupper($jurusan)); ?></span> <br>
             <span class="text-3xl gr-dark-orange text-black">FAKULTAS EKONOMIKA DAN BISNIS UNDIP 2023</span> <br>
         </div>
-        {{--
-    </a> --}}
+        
 
     <div class="block lg:hidden">
         <button id="nav-toggle" class="nav-toggle">
@@ -87,8 +84,8 @@
         <ul class="list-reset lg:flex justify-end flex-1 items-center font-light">
 
             <li class="mt-2 sm:mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                <a href="{{ route('home.vote') }}"
-                    class="link-button {{ url()->current() == route('home.vote') || url()->current() == route('home.vote.detail') ? 'active' : '' }}">
+                <a href="<?php echo e(route('home.vote')); ?>"
+                    class="link-button <?php echo e(url()->current() == route('home.vote') || url()->current() == route('home.vote.detail') ? 'active' : ''); ?>">
                     Vote
                 </a>
             </li>
@@ -98,46 +95,45 @@
 
 
 <div class="container m-auto mt-20 md:mt-18">
-    @if (!session('finish_vote'))
-    <form id="voteform" method="post" action="{{ route('home.vote.store2') }}" class="form-vote">
+    <?php if(!session('finish_vote')): ?>
+    <form id="voteform" method="post" action="<?php echo e(route('home.vote.store3')); ?>" class="form-vote">
 
 
-        @csrf
+        <?php echo csrf_field(); ?>
 
-        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Calon Ketua
-            Himpunan {{ strtoupper($jurusan) }} sesuai pilihanmu! </h3>
+        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Senat Jurusan <?php echo e(strtoupper($jurusan)); ?> sesuai pilihanmu! </h3>
         <div class="flex flex-wrap justify-center">
-            @foreach ($candidates2 as $key => $item)
+            <?php $__currentLoopData = $candidates3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="py-2 px-2 w-full md:w-1/2">
                 <div class="object-center h-12">
                     <div class="frame-number">
-                        <h1 class="text-5xl m-auto">{{ $item->number }}</h1>
+                        <h1 class="text-5xl m-auto"><?php echo e($item->number); ?></h1>
                     </div>
                 </div>
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
-                        class="kandidat-container @if ($jurusan == 'Manajemen dan Bisnis Digital S1') manajemen @endif @if ($jurusan == 'Akuntansi S1') akuntansi @endif @if ($jurusan == 'Ekonomi Islam S1') ekonomi-islam @endif @if ($jurusan == 'Ekonomi S1') ekonomi @endif">
+                        class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
                         <p class="text-center pt-24 text-white px-6 text-2xl mx-auto"
                             style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight:bolder;">
-                            {{ $item->name }}</p>
+                            <?php echo e($item->name); ?></p>
                     </div>
                     <div class="object-center h-10 mt-8 flex">
-                        <img src="{{ $item->image }}" class="kandidat-frame object-cover">
-                        @if ($item->image_vice)
-                        <img src="{{ $item->image_vice }}" class="kandidat-frame object-cover">
-                        @endif
+                        <img src="<?php echo e($item->image); ?>" class="kandidat-frame object-cover">
+                        <?php if($item->image_vice): ?>
+                        <img src="<?php echo e($item->image_vice); ?>" class="kandidat-frame object-cover">
+                        <?php endif; ?>
                     </div>
                     <div class="text-center pb-10 pt-10 flex flex-col">
                         <button type="button" class="mx-auto btn-sm mt-8" onclick="vote(this)"
-                            data-name="{{ $item->name }}" data-identitas="{{ $item->id }}"
+                            data-name="<?php echo e($item->name); ?>" data-identitas="<?php echo e($item->id); ?>"
                             data-sumref="#sumdata1">Vote</button>
-                        <input type="radio" name="candidate2" value="{{ $item->id }}" class="hidden">
+                        <input type="radio" name="candidate3" value="<?php echo e($item->id); ?>" class="hidden">
                     </div>
                 </div>
             </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            @if (count($candidates2) == 1)
+            <?php if(count($candidates3) == 1): ?>
             <div class="py-2 px-2 w-full md:w-1/2">
                 <div class="object-center h-12">
                     <div class="frame-number">
@@ -146,7 +142,7 @@
                 </div>
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
-                        class="kandidat-container @if ($jurusan == 'Manajemen dan Bisnis Digital S1') manajemen @endif @if ($jurusan == 'Akuntansi S1') akuntansi @endif @if ($jurusan == 'Ekonomi Islam S1') ekonomi-islam @endif @if ($jurusan == 'Ekonomi S1') ekonomi @endif">
+                        class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
                         <p class="text-center pt-24 text-white px-6 text-2xl mx-auto"
                             style="font-family: 'Courier New', Courier, monospace!important">Kotak Kosong</p>
                     </div>
@@ -156,25 +152,23 @@
                     </div>
                     <div class="text-center pb-10 pt-10 flex flex-col">
                         <button type="button" class="mx-auto btn-sm mt-8" onclick="vote(this)"
-                            data-name="{{ $item->name }}" data-identitas="{{ $item->id }}"
+                            data-name="<?php echo e($item->name); ?>" data-identitas="<?php echo e($item->id); ?>"
                             data-sumref="#sumdata1">Vote</button>
-                        <input type="radio" name="candidate2" value="0" class="hidden">
+                        <input type="radio" name="candidate3" value="0" class="hidden">
                     </div>
                 </div>
             </div>
-            @endif
+            <?php endif; ?>
         </div>
-        {{-- <div class="py-4 my-8 px-4 shadow  text-center bg-white">
-            <input type="submit" class="mx-auto w-full btn active px-20 my-6 kirim-vote pulse" value="Kirim">
-        </div> --}}
+        
         <div class="py-4 my-8 px-4 text-center">
             <input type="submit" class="mx-auto w-full btn active px-20 my-6 kirim-vote pulse" value="Kirim"
                 style="background:white">
         </div>
     </form>
-    @endif
+    <?php endif; ?>
 
-    @if (session('finish_vote'))
+    <?php if(session('finish_vote')): ?>
     <div class="text-center text-4xl font-extrabold font-serif italic mt-10">
         <p data-aos="fade-up">Terima kasih! Kamu telah berpartisipasi pada pesta demokrasi FEB Universitas Diponegoro
             Tahun 2023</p>
@@ -195,23 +189,23 @@
                     }, t);
                 }
     </script>
-    @endif
+    <?php endif; ?>
 
 
 
 
 
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('extraCss')
-<link rel="stylesheet" href="{{ asset('__frontend/css/vote-detail.css') }}">
-@endsection
+<?php $__env->startSection('extraCss'); ?>
+<link rel="stylesheet" href="<?php echo e(asset('__frontend/css/vote-detail.css')); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('extraJs')
-@if (!session('finish_vote'))
-<script src="{{ asset('__frontend/js/vote-detail.js') }}"></script>
-@else
+<?php $__env->startSection('extraJs'); ?>
+<?php if(!session('finish_vote')): ?>
+<script src="<?php echo e(asset('__frontend/js/vote-detail.js')); ?>"></script>
+<?php else: ?>
 <script>
     window.onload = "AutoRefresh(10000);"
 
@@ -223,5 +217,6 @@
                 }, t);
             }
 </script>
-@endif
-@endsection
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.layouts.plain', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\MAMP\htdocs\evote\resources\views/frontend/vote/detail_3.blade.php ENDPATH**/ ?>

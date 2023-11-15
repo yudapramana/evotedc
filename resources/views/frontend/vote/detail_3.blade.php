@@ -68,7 +68,7 @@
 
             {{-- <span class="text-2xl gr-dark-orange text-black pl-3">@yield('title', config('app.name', ''))</span>
             --}}
-            <span class="text-5xl gr-dark-orange text-black">SUKSESI HIMPUNAN {{ strtoupper($jurusan) }}</span> <br>
+            <span class="text-5xl gr-dark-orange text-black">PEMILIHAN SENAT {{ strtoupper($jurusan) }}</span> <br>
             <span class="text-3xl gr-dark-orange text-black">FAKULTAS EKONOMIKA DAN BISNIS UNDIP 2023</span> <br>
         </div>
         {{--
@@ -99,15 +99,15 @@
 
 <div class="container m-auto mt-20 md:mt-18">
     @if (!session('finish_vote'))
-    <form id="voteform" method="post" action="{{ route('home.vote.store2') }}" class="form-vote">
+    <form id="voteform" method="post" action="{{ route('home.vote.store3') }}" class="form-vote">
 
 
         @csrf
 
-        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Calon Ketua
-            Himpunan {{ strtoupper($jurusan) }} sesuai pilihanmu! </h3>
+        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Senat Jurusan {{
+            strtoupper($jurusan) }} sesuai pilihanmu! </h3>
         <div class="flex flex-wrap justify-center">
-            @foreach ($candidates2 as $key => $item)
+            @foreach ($candidates3 as $key => $item)
             <div class="py-2 px-2 w-full md:w-1/2">
                 <div class="object-center h-12">
                     <div class="frame-number">
@@ -131,13 +131,13 @@
                         <button type="button" class="mx-auto btn-sm mt-8" onclick="vote(this)"
                             data-name="{{ $item->name }}" data-identitas="{{ $item->id }}"
                             data-sumref="#sumdata1">Vote</button>
-                        <input type="radio" name="candidate2" value="{{ $item->id }}" class="hidden">
+                        <input type="radio" name="candidate3" value="{{ $item->id }}" class="hidden">
                     </div>
                 </div>
             </div>
             @endforeach
 
-            @if (count($candidates2) == 1)
+            @if (count($candidates3) == 1)
             <div class="py-2 px-2 w-full md:w-1/2">
                 <div class="object-center h-12">
                     <div class="frame-number">
@@ -158,7 +158,7 @@
                         <button type="button" class="mx-auto btn-sm mt-8" onclick="vote(this)"
                             data-name="{{ $item->name }}" data-identitas="{{ $item->id }}"
                             data-sumref="#sumdata1">Vote</button>
-                        <input type="radio" name="candidate2" value="0" class="hidden">
+                        <input type="radio" name="candidate3" value="0" class="hidden">
                     </div>
                 </div>
             </div>

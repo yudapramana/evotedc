@@ -27,7 +27,7 @@ class VoteController extends Controller
             $data['current_member'] = session('current_member');
             $voting = Voting::where('member_id', $data['current_member']->id)
                 ->first();
-            if ($voting && $voting->candidate_id_2 != null) {
+            if ($voting && $voting->candidate_id_2 != null && $voting->candidate_id_3 != null) {
                 $data['current_member'] = null;
                 session()->forget(['current_member','finish_vote', 'finish_note']);
             }
@@ -82,6 +82,7 @@ class VoteController extends Controller
         $data['current_member'] = session('current_member');
         $data['candidates1'] = Candidate::orderBy('number')->where('type', 'bem')->get();
         $data['candidates2'] = Candidate::orderBy('number')->where('type', 'him')->where('jurusan', $data['current_member']->jurusan)->get();
+        $data['candidates3'] = Candidate::orderBy('number')->where('type', 'sen')->where('jurusan', $data['current_member']->jurusan)->get();
         $data['jurusan'] = $data['current_member']->jurusan;
         // $data['candidates2'] = Candidate::orderBy('number')->where('type', session('current_member')->type)->get();
 
@@ -92,6 +93,8 @@ class VoteController extends Controller
         if ($voting) {
             if (!$voting->candidate_id_2) {
                 return view('frontend.vote.detail_2', $data);
+            } elseif (!$voting->candidate_id_3) {
+                return view('frontend.vote.detail_3', $data);
             } else {
                 return view('frontend.vote.detail', $data);
             }
@@ -130,10 +133,17 @@ class VoteController extends Controller
                 ->where('type', 'primary')
                 ->first();
 
-            if ($voting && $voting->candidate_id_2 != null) {
+            if ($voting && $voting->candidate_id_1 != null && $voting->candidate_id_2 != null && $voting->candidate_id_3 != null) {
                 $validator->errors()->add('member', 'Maaf voting hanya dilakukan sekali saja!');
                 return redirect()->back()->withErrors($validator)->withInput();
-            }
+            } 
+            // else {
+            //     $data = [
+            //         'member' => $member,
+            //         'voting' => $voting
+            //     ];
+            //     return $data;
+            // }
 
             session()->put('current_member', $member);
             return redirect()->back();
@@ -273,11 +283,70 @@ class VoteController extends Controller
             if ($voting) {
                 $voting->update(['candidate_id_2' => request('candidate2')]);
             } else {
-                Alert::error('Error', 'Maaf anda telah melakukan voting!');
+
+                if($voting->candidate_id_3 == null) {
+                    return redirect(route('home.vote.detail'));
+                } else {
+                    Alert::error('Error', 'Maaf anda telah melakukan voting!');
+                    return redirect(route('home.vote'));
+                }
+                
+            }
+
+            $voting->fresh();
+            if($voting->candidate_id_3 != null) {
+                session()->put('finish_vote', true);
+            }
+            Alert::success('Berhasil', 'Voting anda telah diterima!');
+            return redirect()->back();
+        } catch (\Exception $e) {
+            Alert::error('Error', $e->getMessage());
+            return redirect()->back();
+        }
+    }
+
+     /**
+     * store data to database
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store3(Request $request)
+    {
+        try {
+            /** cek validasi */
+            $current_member = session('current_member');
+            if (!$current_member) {
+                Alert::error('Error', 'Waktu habis, silakan lakukan validasi lagi!');
                 return redirect(route('home.vote'));
             }
 
-            session()->put('finish_vote', true);
+            $validator = Validator::make($request->all(), [
+                'candidate3' => 'required|exists:candidates,id',
+            ], [
+                'candidate3.required' => 'Harap masukan pilihan terlebih dahulu!',
+                'candidate3.exists' => 'Pastikan pilihan kandidat anda!',
+            ]);
+
+            if ($validator->fails()) {
+                Alert::warning('Perhatian', $validator->errors()->first());
+                return redirect()->back();
+            }
+
+            /** cek is vote before */
+            $voting = Voting::where('member_id', $current_member->id)
+                            ->whereNull('candidate_id_3')
+                ->first();
+
+            if ($voting) {
+                $voting->update(['candidate_id_3' => request('candidate3')]);
+            } else {
+                Alert::error('Error', 'Maaf anda telah melakukan voting!');
+                return redirect(route('home.vote'));
+            }
+            $voting->fresh();
+            if($voting->candidate_id_2 != null) {
+                session()->put('finish_vote', true);
+            }
             Alert::success('Berhasil', 'Voting anda telah diterima!');
             return redirect()->back();
         } catch (\Exception $e) {
