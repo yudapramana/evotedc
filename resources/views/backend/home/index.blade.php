@@ -1,5 +1,11 @@
 @extends('backend.layouts.app')
 @section('content')
+
+<style>
+    .wiheight {
+        height: 50px !important;
+    }
+</style>
 {{-- <div class="container"> --}}
     {{-- <div class="row justify-content-center"> --}}
         {{-- <div class="col-md-8"> --}}
@@ -31,7 +37,7 @@
                 </div>
                 <div class="kt-widget14__content">
                     <div class="flex mr-5">
-                        <h4>
+                        <h4 class="wiheight">
                             PEMIRA 2022
                         </h4>
                         <hr>
@@ -58,7 +64,7 @@
                     </div>
                     @foreach ($member_count_2 as $key => $item)
                     <div class="flex mr-5">
-                        <h4>
+                        <h4 class="wiheight">
                             Suksesi {{ $key }}
                         </h4>
                         <hr>
@@ -89,7 +95,7 @@
                 </div>
                 <div class="kt-widget14__content">
                     <div class="flex mr-5">
-                        <h4>
+                        <h4 class="wiheight">
                             PEMIRA 2022
                         </h4>
                         <hr>
@@ -116,7 +122,7 @@
                     </div>
                     @foreach ($member_count_3 as $key => $item)
                     <div class="flex mr-5">
-                        <h4>
+                        <h4 class="wiheight">
                             Senator {{ $key }}
                         </h4>
                         <hr>
