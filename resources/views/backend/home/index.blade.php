@@ -85,6 +85,9 @@
 
                     </div>
                     @endforeach
+
+                </div>
+                <div class="kt-widget14__content">
                     @foreach ($member_count_3 as $key => $item)
                     <div class="flex mr-5">
                         <h4>
@@ -114,9 +117,9 @@
 
                     </div>
                     @endforeach
-
-
                 </div>
+
+
             </div>
         </div>
     </div>
