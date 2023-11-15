@@ -88,6 +88,31 @@
 
                 </div>
                 <div class="kt-widget14__content">
+                    <div class="flex mr-5">
+                        {{-- <h4>
+                            PEMIRA 2022
+                        </h4>
+                        <hr>
+                        <h6>
+                            Jumlah Hak Pilih
+                        </h6>
+                        <h3>
+                            {{ $member_count }}
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Terpakai
+                        </h6>
+                        <h3>
+                            {{ $voting_count }} ({{ sprintf('%.2f%%', ($voting_count / ($member_count ?: 1)) * 100) }})
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Tidak Terpakai
+                        </h6>
+                        <h3>
+                            {{ $member_count - $voting_count }} ({{ sprintf('%.2f%%', (($member_count - $voting_count) /
+                            ($member_count ?: 1)) * 100) }})
+                        </h3> --}}
+                    </div>
                     @foreach ($member_count_3 as $key => $item)
                     <div class="flex mr-5">
                         <h4>
