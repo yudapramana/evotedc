@@ -94,11 +94,11 @@
 
                 </div>
                 <div class="kt-widget14__content" style="margin-top:50px !important;">
-                    <div class="flex mr-5">
+                    <div class="flex mr-5" style="color:white !important;">
                         <h4 class="wiheight">
                             PEMIRA 2022
                         </h4>
-                        <hr>
+                        <hr style="border-top: none !important;">
                         <h6>
                             Jumlah Hak Pilih
                         </h6>
