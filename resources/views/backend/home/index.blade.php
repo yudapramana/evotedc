@@ -199,7 +199,9 @@
     </div>
 
     {{-- Suksesi Himpunan --}}
-    <h4>Suksesi Himpunan</h4>
+    <div class="row">
+        <h4>Suksesi Himpunan</h4>
+    </div>
     @foreach ($candidates2 as $jurusan => $collection)
     <div class="col-xl-6 col-lg-6 col-md-6">
         <!--begin:: Widgets/Best Sellers-->
