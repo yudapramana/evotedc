@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Pemira FEB Undip 2022',
+    'name' => 'Pemira FEB Undip 2023',
     'env' => 'production',
     'debug' => true,
     'url' => 'http://localhost',

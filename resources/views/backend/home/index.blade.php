@@ -1,194 +1,231 @@
 @extends('backend.layouts.app')
 @section('content')
-    {{--    <div class="container"> --}}
-    {{--        <div class="row justify-content-center"> --}}
-    {{--            <div class="col-md-8"> --}}
-    {{--                <div class="card"> --}}
-    {{--                    <div class="card-header">Dashboard</div> --}}
-    {{--                    <div class="card-body"> --}}
-    {{--                        @if (session('status')) --}}
-    {{--                            <div class="alert alert-success" role="alert"> --}}
-    {{--                                {{ session('status') }} --}}
-    {{--                            </div> --}}
-    {{--                        @endif --}}
-    {{--                        You are logged in! --}}
-    {{--                    </div> --}}
-    {{--                </div> --}}
-    {{--            </div> --}}
-    {{--        </div> --}}
-    {{--    </div> --}}
-    <div class="row">
-        <div class="col-xl-12 col-lg-12">
-            <div class="kt-portlet kt-portlet--height-fluid">
-                <div class="kt-widget14">
-                    <div class="kt-widget14__header">
-                        <h3 class="kt-widget14__title">
-                            Statistik
+{{-- <div class="container"> --}}
+    {{-- <div class="row justify-content-center"> --}}
+        {{-- <div class="col-md-8"> --}}
+            {{-- <div class="card"> --}}
+                {{-- <div class="card-header">Dashboard</div> --}}
+                {{-- <div class="card-body"> --}}
+                    {{-- @if (session('status')) --}}
+                    {{-- <div class="alert alert-success" role="alert"> --}}
+                        {{-- {{ session('status') }} --}}
+                        {{-- </div> --}}
+                    {{-- @endif --}}
+                    {{-- You are logged in! --}}
+                    {{-- </div> --}}
+                {{-- </div> --}}
+            {{-- </div> --}}
+        {{-- </div> --}}
+    {{-- </div> --}}
+<div class="row">
+    <div class="col-xl-12 col-lg-12">
+        <div class="kt-portlet kt-portlet--height-fluid">
+            <div class="kt-widget14">
+                <div class="kt-widget14__header">
+                    <h3 class="kt-widget14__title">
+                        Statistik
+                    </h3>
+                    <span class="kt-widget14__desc">
+                        Pemilihan
+                    </span>
+                </div>
+                <div class="kt-widget14__content">
+                    <div class="flex mr-5">
+                        <h4>
+                            PEMIRA 2022
+                        </h4>
+                        <hr>
+                        <h6>
+                            Jumlah Hak Pilih
+                        </h6>
+                        <h3>
+                            {{ $member_count }}
                         </h3>
-                        <span class="kt-widget14__desc">
-                            Pemilihan
-                        </span>
-                    </div>
-                    <div class="kt-widget14__content">
-                        <div class="flex mr-5">
-                            <h4>
-                                PEMIRA 2022
-                            </h4>
-                            <hr>
-                            <h6>
-                                Jumlah Hak Pilih
-                            </h6>
-                            <h3>
-                                {{ $member_count }}
-                            </h3>
-                            <h6>
-                                Jumlah Hak Pilih Terpakai
-                            </h6>
-                            <h3>
-                                {{ $voting_count }} ({{ sprintf('%.2f%%', ($voting_count / ($member_count ?: 1)) * 100) }})
-                            </h3>
-                            <h6>
-                                Jumlah Hak Pilih Tidak Terpakai
-                            </h6>
-                            <h3>
-                                {{ $member_count - $voting_count }} ({{ sprintf('%.2f%%', (($member_count - $voting_count) / ($member_count ?: 1)) * 100) }})
-                            </h3>
-
-                        </div>
-                        @foreach ($member_count_2 as $key => $item)
-                            <div class="flex mr-5">
-                                <h4>
-                                    Suksesi {{ $key }}
-                                </h4>
-                                <hr>
-                                <h6>
-                                    Jumlah Hak Pilih
-                                </h6>
-                                <h3>
-                                    {{ $item }}
-                                </h3>
-                                <h6>
-                                    Jumlah Hak Pilih Terpakai
-                                </h6>
-                                <h3>
-                                    @php $votinCounthim = isset($voting_count_2[$key]) ? $voting_count_2[$key] : 0;  @endphp
-                                    {{ $votinCounthim }} ({{ sprintf('%.2f%%', ($votinCounthim / ($item ?: 1)) * 100) }})
-                                </h3>
-                                <h6>
-                                    Jumlah Hak Pilih Tidak Terpakai
-                                </h6>
-                                <h3>
-                                    {{ $item - $votinCounthim }} ({{ sprintf('%.2f%%', (($item - $votinCounthim) / ($item ?: 1)) * 100) }})
-                                </h3>
-
-                            </div>
-                        @endforeach
+                        <h6>
+                            Jumlah Hak Pilih Terpakai
+                        </h6>
+                        <h3>
+                            {{ $voting_count }} ({{ sprintf('%.2f%%', ($voting_count / ($member_count ?: 1)) * 100) }})
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Tidak Terpakai
+                        </h6>
+                        <h3>
+                            {{ $member_count - $voting_count }} ({{ sprintf('%.2f%%', (($member_count - $voting_count) /
+                            ($member_count ?: 1)) * 100) }})
+                        </h3>
 
                     </div>
+                    @foreach ($member_count_2 as $key => $item)
+                    <div class="flex mr-5">
+                        <h4>
+                            Suksesi {{ $key }}
+                        </h4>
+                        <hr>
+                        <h6>
+                            Jumlah Hak Pilih
+                        </h6>
+                        <h3>
+                            {{ $item }}
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Terpakai
+                        </h6>
+                        <h3>
+                            @php $votinCounthim = isset($voting_count_2[$key]) ? $voting_count_2[$key] : 0; @endphp
+                            {{ $votinCounthim }} ({{ sprintf('%.2f%%', ($votinCounthim / ($item ?: 1)) * 100) }})
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Tidak Terpakai
+                        </h6>
+                        <h3>
+                            {{ $item - $votinCounthim }} ({{ sprintf('%.2f%%', (($item - $votinCounthim) / ($item ?: 1))
+                            * 100) }})
+                        </h3>
+
+                    </div>
+                    @endforeach
+                    @foreach ($member_count_3 as $key => $item)
+                    <div class="flex mr-5">
+                        <h4>
+                            Senator {{ $key }}
+                        </h4>
+                        <hr>
+                        <h6>
+                            Jumlah Hak Pilih
+                        </h6>
+                        <h3>
+                            {{ $item }}
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Terpakai
+                        </h6>
+                        <h3>
+                            @php $votinCounthim = isset($voting_count_3[$key]) ? $voting_count_3[$key] : 0; @endphp
+                            {{ $votinCounthim }} ({{ sprintf('%.2f%%', ($votinCounthim / ($item ?: 1)) * 100) }})
+                        </h3>
+                        <h6>
+                            Jumlah Hak Pilih Tidak Terpakai
+                        </h6>
+                        <h3>
+                            {{ $item - $votinCounthim }} ({{ sprintf('%.2f%%', (($item - $votinCounthim) / ($item ?: 1))
+                            * 100) }})
+                        </h3>
+
+                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
         </div>
-        @if ($time_end)
-            <div class="col-xl-12 col-lg-12">
-                <!--begin:: Widgets/Best Sellers-->
-                <div class="kt-portlet kt-portlet--height-fluid">
-                    <div class="kt-portlet__head">
-                        <div class="kt-portlet__head-label">
-                            <h3 class="kt-portlet__head-title">
-                                Rekapitulasi Pemilihan BEM FEB UNDIP 2022
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="kt-portlet__body">
-                        <div class="kt-widget5">
-                            @foreach ($candidates1 as $item)
-                                <div class="kt-widget5__item">
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__pic">
-                                            <img class="kt-widget7__img" src="{{ $item->image }}" alt="">
-                                            @if ($item->image_vice)
-                                                <img class="kt-widget7__img" src="{{ $item->image_vice }}" alt="">
-                                            @endif
-                                        </div>
-                                        <div class="kt-widget5__section">
-                                            <h5 class="kt-widget5__title text-muted font-weight-light">Nomor : {{ $item->number }}</h5>
-                                            <strong class="kt-widget5__desc font-weight-bold">{{ $item->name }}</strong>
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number text-info text-center">{{ count($item->voting1) }} ({{ sprintf('%.2f%%', (count($item->voting1) / ($voting_count ?: 1)) * 100) }})</span>
-                                            <span class="kt-widget5__votes">suara</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+    </div>
+    @if ($time_end)
+    <div class="col-xl-12 col-lg-12">
+        <!--begin:: Widgets/Best Sellers-->
+        <div class="kt-portlet kt-portlet--height-fluid">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Rekapitulasi Pemilihan BEM FEB UNDIP 2022
+                    </h3>
                 </div>
-                <!--end:: Widgets/Best Sellers-->
             </div>
-
-            @foreach ($candidates2 as $jurusan => $collection)
-                <div class="col-xl-12 col-lg-12">
-                    <!--begin:: Widgets/Best Sellers-->
-                    <div class="kt-portlet kt-portlet--height-fluid">
-                        <div class="kt-portlet__head">
-                            <div class="kt-portlet__head-label">
-                                <h3 class="kt-portlet__head-title">
-                                    Rekapitulasi Pemilihan pada Jurusan {{ $jurusan }}
-                                </h3>
+            <div class="kt-portlet__body">
+                <div class="kt-widget5">
+                    @foreach ($candidates1 as $item)
+                    <div class="kt-widget5__item">
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__pic">
+                                <img class="kt-widget7__img" src="{{ $item->image }}" alt="">
+                                @if ($item->image_vice)
+                                <img class="kt-widget7__img" src="{{ $item->image_vice }}" alt="">
+                                @endif
+                            </div>
+                            <div class="kt-widget5__section">
+                                <h5 class="kt-widget5__title text-muted font-weight-light">Nomor : {{ $item->number }}
+                                </h5>
+                                <strong class="kt-widget5__desc font-weight-bold">{{ $item->name }}</strong>
                             </div>
                         </div>
-                        <div class="kt-portlet__body">
-                            <div class="kt-widget5">
-                                @foreach ($collection as $item)
-                                    <div class="kt-widget5__item">
-                                        <div class="kt-widget5__content">
-                                            <div class="kt-widget5__pic">
-                                                <img class="kt-widget7__img" src="{{ $item->image }}" alt="">
-                                                @if ($item->image_vice)
-                                                    <img class="kt-widget7__img" src="{{ $item->image_vice }}" alt="">
-                                                @endif
-                                            </div>
-                                            <div class="kt-widget5__section">
-                                                <h5 class="kt-widget5__title text-muted font-weight-light">Nomor : {{ $item->number }}</h5>
-                                                <strong class="kt-widget5__desc font-weight-bold">{{ $item->name }}</strong>
-                                            </div>
-                                        </div>
-                                        <div class="kt-widget5__content">
-                                            <div class="kt-widget5__stats">
-                                                @php $votingCount = isset($voting_count_2[$jurusan]) ? $voting_count_2[$jurusan] : 1; @endphp
-                                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting2) }} ({{ sprintf('%.2f%%', (count($item->voting2) / ($votingCount ?: 1)) * 100) }})</span>
-                                                <span class="kt-widget5__votes">suara</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__stats">
+                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting1) }} ({{
+                                    sprintf('%.2f%%', (count($item->voting1) / ($voting_count ?: 1)) * 100) }})</span>
+                                <span class="kt-widget5__votes">suara</span>
                             </div>
                         </div>
                     </div>
-                    <!--end:: Widgets/Best Sellers-->
+                    @endforeach
                 </div>
-            @endforeach
-        @endif
-        @if (!$time_end)
-            <div class="col-xl-12 col-lg-12">
-
-                <div class="kt-portlet kt-portlet--height-fluid">
-                    <div class="kt-widget14">
-                        Rekapitulasi Perhitungan Suara dinonaktifkan hingga waktu pemilihan selesai.
-                    </div>
-                </div>
-
             </div>
-        @endif
+        </div>
+        <!--end:: Widgets/Best Sellers-->
+    </div>
+
+    @foreach ($candidates2 as $jurusan => $collection)
+    <div class="col-xl-12 col-lg-12">
+        <!--begin:: Widgets/Best Sellers-->
+        <div class="kt-portlet kt-portlet--height-fluid">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Rekapitulasi Pemilihan pada Jurusan {{ $jurusan }}
+                    </h3>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+                <div class="kt-widget5">
+                    @foreach ($collection as $item)
+                    <div class="kt-widget5__item">
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__pic">
+                                <img class="kt-widget7__img" src="{{ $item->image }}" alt="">
+                                @if ($item->image_vice)
+                                <img class="kt-widget7__img" src="{{ $item->image_vice }}" alt="">
+                                @endif
+                            </div>
+                            <div class="kt-widget5__section">
+                                <h5 class="kt-widget5__title text-muted font-weight-light">Nomor : {{ $item->number }}
+                                </h5>
+                                <strong class="kt-widget5__desc font-weight-bold">{{ $item->name }}</strong>
+                            </div>
+                        </div>
+                        <div class="kt-widget5__content">
+                            <div class="kt-widget5__stats">
+                                @php $votingCount = isset($voting_count_2[$jurusan]) ? $voting_count_2[$jurusan] : 1;
+                                @endphp
+                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting2) }} ({{
+                                    sprintf('%.2f%%', (count($item->voting2) / ($votingCount ?: 1)) * 100) }})</span>
+                                <span class="kt-widget5__votes">suara</span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <!--end:: Widgets/Best Sellers-->
+    </div>
+    @endforeach
+    @endif
+    @if (!$time_end)
+    <div class="col-xl-12 col-lg-12">
+
+        <div class="kt-portlet kt-portlet--height-fluid">
+            <div class="kt-widget14">
+                Rekapitulasi Perhitungan Suara dinonaktifkan hingga waktu pemilihan selesai.
+            </div>
+        </div>
+
+    </div>
+    @endif
     @endsection
 
     @section('extraJs')
-        <script src="{{ asset('js/dashboard.js?v2') }}" type="text/javascript"></script>
-        <script>
-            const ChartCandidate = '{{ route('backend.chartCandidate') }}';
+    <script src="{{ asset('js/dashboard.js?v2') }}" type="text/javascript"></script>
+    <script>
+        const ChartCandidate = '{{ route('backend.chartCandidate') }}';
             const ChartCandidate2 = '{{ route('backend.chartCandidate2') }}';
             var setChartSt = function(chartId, data) {
                 if ($('#' + chartId).length == 0) {
@@ -325,5 +362,5 @@
                 //     });
                 // });
             });
-        </script>
+    </script>
     @endsection
