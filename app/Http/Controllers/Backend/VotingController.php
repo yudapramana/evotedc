@@ -79,6 +79,8 @@ class VotingController extends Controller
             ->orderBy('voting_count', 'desc')
             ->orderBy('created_at', 'desc')->get();
 
+
+
         // return $list;
         $list->transform(function ($item, $key) {
             
@@ -88,10 +90,15 @@ class VotingController extends Controller
                 'nama' => $item->member->name,
                 'nim' => "'".$item->member->nim,
                 'jurusan' => $item->member->jurusan,
-                'angkatan' => $item->member->angkatan
+                'angkatan' => $item->member->angkatan,
+                'candidate_1' => ($item->candidate_id_1 != null) ? 'Sudah' : 'Belum',
+                'candidate_2' => ($item->candidate_id_2 != null) ? 'Sudah' : 'Belum',
+                'candidate_3' => ($item->candidate_id_3 != null) ? 'Sudah' : 'Belum',
             ];
             return $result;
         });
+
+        // return $list;
 
         return Excel::download(new VotingExport($list), 'e-voting UNDIP 2023.xlsx');
     }

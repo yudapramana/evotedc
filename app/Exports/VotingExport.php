@@ -26,6 +26,6 @@ class VotingExport implements FromCollection, WithHeadings, ShouldAutoSize
 
     public function headings(): array
     {
-        return ["No", "Waktu Voting", "Nama Lengkap", "NIM", "Jurusan", "Angkatan"];
+        return ["No", "Waktu Voting", "Nama Lengkap", "NIM", "Jurusan", "Angkatan", "Voting BEM", "Voting Himpunan", "Voting Senat"];
     }
 }
