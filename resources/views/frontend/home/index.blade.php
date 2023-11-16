@@ -58,7 +58,7 @@
         <h2 class="text-center text-white text-2xl font-bold">#MewujudkanKemajuanFEB</h2>
         <h2 class="text-center text-white text-2xl"><i class="fab fa fa-phone mt-4"></i> 089691648839 </h2>
         <h2 class="text-center text-white text-2xl"><i class="fab fa fa-instagram mt-4"></i> <a
-                href="https://instagram.com/@pemirafebundip " target="_blank">@pemirafebundip </a>
+                href="https://instagram.com/pemirafebundip " target="_blank">@pemirafebundip </a>
         </h2>
         <h2 class="text-center text-white text-2xl"><i class="fab fa fa-envelope mt-4"></i> <a
                 href="mailto:pemirafebundip.official@gmail.com " target="_blank">pemirafebundip.official@gmail.com </a>
