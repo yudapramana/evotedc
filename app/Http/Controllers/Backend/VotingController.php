@@ -81,7 +81,7 @@ class VotingController extends Controller
 
 
 
-        return $list;
+        // return $list;
         $list->transform(function ($item, $key) {
             
             $result = [
