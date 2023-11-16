@@ -1,3 +1,12 @@
+<style>
+    footer {
+        clear: both;
+        position: relative;
+        height: 200px;
+        margin-top: -200px;
+    }
+</style>
+
 <footer class="py-10 center" style="background:brown; justify-content:center">
 
     {{-- <ul class="list-reset lg:flex justify-center flex-1 items-center font-light pb-5">
