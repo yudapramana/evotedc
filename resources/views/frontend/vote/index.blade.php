@@ -15,8 +15,8 @@
     background-size: cover; justify-content: center !important;">
 
 
-    <div class="pt-6 pb-5">
-        <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center text-white">
+    <div class="pt-1 pb-5">
+        <h1 class="pt-3 mt-2 text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center text-white">
             Login Voting</h1>
 
         </p>
