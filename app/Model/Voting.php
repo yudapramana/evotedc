@@ -27,4 +27,8 @@ class Voting extends Model
     public function candidate2() {
         return $this->belongsTo(Candidate::class, 'candidate_id_2', 'id');
     }
+
+    public function candidate3() {
+        return $this->belongsTo(Candidate::class, 'candidate_id_3', 'id');
+    }
 }

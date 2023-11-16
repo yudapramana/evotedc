@@ -73,4 +73,26 @@ class VotingController extends Controller
 
         return Excel::download(new VotingExport($list), 'e-voting matagaruda 2020.xlsx');
     }
+
+    public function generate() {
+        $list = Voting::select(DB::raw('*, count(*) as voting_count'))->with('member')->groupBy('member_id')
+            ->orderBy('voting_count', 'desc')
+            ->orderBy('created_at', 'desc')->get();
+
+        // return $list;
+        $list->transform(function ($item, $key) {
+            
+            $result = [
+                'no' => $key+1,
+                'waktu_voting' => $item->created_at->format('d-m-Y H:i:s'),
+                'nama' => $item->member->name,
+                'nim' => "'".$item->member->nim,
+                'jurusan' => $item->member->jurusan,
+                'angkatan' => $item->member->angkatan
+            ];
+            return $result;
+        });
+
+        return Excel::download(new VotingExport($list), 'e-voting UNDIP 2023.xlsx');
+    }
 }

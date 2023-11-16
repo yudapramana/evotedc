@@ -26,35 +26,12 @@
         <img class="w-32 h-32" src="http://koeliah.com/wp-content/uploads/2018/05/undip.png" alt="Pemilihan">
     </div>
 
-
-    <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?>
-    <div>
-        <img class="h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_MSA_avawfa.png"
-            alt="Manajemen">
-    </div>
-    <?php endif; ?>
-    <?php if($jurusan == 'Ekonomi S1'): ?>
-    <div>
-        <img class="h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_-_DESC_crng1v.png"
-            alt="Ekonomi">
-    </div>
-    <?php endif; ?>
-    <?php if($jurusan == 'Ekonomi Islam S1'): ?>
-    <div>
+    <div class="hidden md:visible md:flex">
         <img class="w-32 h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_HMEI_vzjat9.png"
-            alt="Ekonomi Islam">
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062877/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_senator_pbfd43.png"
+            alt="Senat">
     </div>
-    <?php endif; ?>
-    <?php if($jurusan == 'Akuntansi S1'): ?>
-    <div>
-        <img class="w-32 h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/Logo_KMA-1_hpozjc.png"
-            alt="Akuntansi">
-    </div>
-    <?php endif; ?>
+    
 
 
 
@@ -80,28 +57,18 @@
         </button>
     </div>
 
-    <div class="flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
-        <ul class="list-reset lg:flex justify-end flex-1 items-center font-light">
-
-            <li class="mt-2 sm:mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                <a href="<?php echo e(route('home.vote')); ?>"
-                    class="link-button <?php echo e(url()->current() == route('home.vote') || url()->current() == route('home.vote.detail') ? 'active' : ''); ?>">
-                    Vote
-                </a>
-            </li>
-        </ul>
-    </div>
+    
 </nav>
 
 
-<div class="container m-auto mt-20 md:mt-18">
+<div class="container m-auto mt-10 md:mt-18">
     <?php if(!session('finish_vote')): ?>
     <form id="voteform" method="post" action="<?php echo e(route('home.vote.store3')); ?>" class="form-vote">
 
 
         <?php echo csrf_field(); ?>
 
-        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Senat Jurusan <?php echo e(strtoupper($jurusan)); ?> sesuai pilihanmu! </h3>
+        <h3 class="text-center text-2xl font-extrabold font-serif  mb-4">Silakan Pilih Senat Independen Jurusan <?php echo e(strtoupper($jurusan)); ?> sesuai pilihanmu! </h3>
         <div class="flex flex-wrap justify-center">
             <?php $__currentLoopData = $candidates3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="py-2 px-2 w-full md:w-1/2">

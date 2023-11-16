@@ -26,7 +26,7 @@
     </div>
     <div>
         <img class="h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/c_crop,w_715/v1669613484/eVote/LOGO_PEMIRA_pgxcpf.png"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062858/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_pemira_2023_pdbjdj.png"
             alt="Pemilihan">
     </div>
 
@@ -54,17 +54,7 @@
         </button>
     </div>
 
-    <div class="flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
-        <ul class="list-reset lg:flex justify-end flex-1 items-center font-light">
-
-            <li class="mt-2 sm:mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                <a href="<?php echo e(route('home.vote')); ?>"
-                    class="link-button <?php echo e(url()->current() == route('home.vote') || url()->current() == route('home.vote.detail') ? 'active' : ''); ?>">
-                    Vote
-                </a>
-            </li>
-        </ul>
-    </div>
+    
 </nav>
 
 
@@ -156,10 +146,10 @@
 <script src="<?php echo e(asset('__frontend/js/vote-detail.js')); ?>"></script>
 <?php else: ?>
 <script>
-    var t = 3000;
+    var t = 60000;
 
 
-            var counter = 3;
+            var counter = 60;
             var interval = setInterval(function() {
                 counter--;
                 // Display 'counter' wherever you want to display it.

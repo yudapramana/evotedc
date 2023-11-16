@@ -4,8 +4,11 @@ namespace App\Exports;
 
 use App\Voting;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class VotingExport implements FromCollection
+
+class VotingExport implements FromCollection, WithHeadings, ShouldAutoSize
 {
     private $dataModel;
 
@@ -19,5 +22,10 @@ class VotingExport implements FromCollection
     public function collection()
     {
         return $this->dataModel;
+    }
+
+    public function headings(): array
+    {
+        return ["No", "Waktu Voting", "Nama Lengkap", "NIM", "Jurusan", "Angkatan"];
     }
 }

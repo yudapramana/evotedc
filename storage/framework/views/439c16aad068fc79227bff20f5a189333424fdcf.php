@@ -76,8 +76,8 @@
         <div class="w-full sm:w-full md:w-4/6 lg:w-4/6 xl:w-4/6" data-aos="fade-in">
             <div class="w-full pr-0 sm:pr-0 md:pr-4 lg:pr-4 xl:pr-4">
                 <div class="mb-3 flex-row sm:flex-row md:flex lg:md:flex xl:md:flex">
-                    <label
-                        class="py-3 leading-tight text-white font-weight-bold w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6">NIM
+                    <label class="py-3 leading-tight text-white font-bold w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6"
+                        style="font-size:larger;">NIM
                         /
                         Voter
                         ID</label>
@@ -88,7 +88,8 @@
                 </div>
                 <?php if(!session('current_member')): ?>
                 <div class="mb-3 flex-row sm:flex-row md:flex lg:md:flex xl:md:flex">
-                    <label class="py-3 leading-tight text-white font-weight-bold w-1/6">Voter Key</label>
+                    <label class="py-3 leading-tight text-white font-bold w-1/6" style="font-size:larger">Voter
+                        Key</label>
                     <input
                         class="input placeholder-gray-secondary opacity-75 w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 <?php echo e($errors->has('voter_key') ? 'border-red-500' : ''); ?>"
                         type="text" name="voter_key"
@@ -100,7 +101,8 @@
                 <?php if(session('current_member')): ?>
                 
                 <div class="mb-3 flex-row sm:flex-row md:flex lg:md:flex xl:md:flex">
-                    <label class="text-white py-3 leading-tight w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6">Nama
+                    <label class="text-white py-3 leading-tight w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6"
+                        style="font-size:larger;">Nama
                         Lengkap</label>
                     <input
                         class="input placeholder-gray-secondary opacity-75 w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 <?php echo e($errors->has('name') ? 'border-red-500' : ''); ?>"
@@ -110,7 +112,8 @@
                 
                 
                 <div class="mb-3 flex-row sm:flex-row md:flex lg:md:flex xl:md:flex">
-                    <label class="text-white py-3 leading-tight w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6">Prodi -
+                    <label class="text-white py-3 leading-tight w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6"
+                        style="font-size:larger;">Prodi -
                         Angkatan</label>
                     <input
                         class="input placeholder-gray-secondary opacity-75 w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 <?php echo e($errors->has('jurusan') ? 'border-red-500' : ''); ?>"
@@ -127,10 +130,7 @@
                         <?php if(session('current_member')): ?>
 
                         <div class="center" style="justify-content: center">
-                            <div style="display:inline-block"
-                                class="btn px-6 <?php echo e(count($errors) > 0 ? 'error' : ''); ?> mx-auto w-full md:w-32 <?php echo e(session('current_member') ? 'success' : ''); ?>">
-                                Data Valid
-                            </div>
+                            
                             <button type="button" style="display:inline-block"
                                 class="btn mx-auto w-full sm:w-full md:w-auto lg:w-auto xl:w-auto <?php echo e(session('current_member') ? 'active' : 'hover:border-gray-secondary hover:text-gray-secondary'); ?>"
                                 id="<?php echo e(session('current_member') ? 'next_vote' : ''); ?>" <?php echo e(session('current_member')

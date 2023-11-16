@@ -30,28 +30,28 @@
     <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?>
     <div>
         <img class="h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_MSA_avawfa.png"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_suksesi_MSA_Manajemen_dan_Bisnis_Digital_tduimn.png"
             alt="Manajemen">
     </div>
     <?php endif; ?>
     <?php if($jurusan == 'Ekonomi S1'): ?>
     <div>
         <img class="h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_-_DESC_crng1v.png"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062883/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_DESC_Ekonomi_n34piu.png"
             alt="Ekonomi">
     </div>
     <?php endif; ?>
     <?php if($jurusan == 'Ekonomi Islam S1'): ?>
     <div>
         <img class="w-32 h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/LOGO_HMEI_vzjat9.png"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_HMEI_Ekonomi_Islam_na0ohz.jpg"
             alt="Ekonomi Islam">
     </div>
     <?php endif; ?>
     <?php if($jurusan == 'Akuntansi S1'): ?>
     <div>
         <img class="w-32 h-32"
-            src="https://res.cloudinary.com/kemenagpessel/image/upload/v1669613484/eVote/Logo_KMA-1_hpozjc.png"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062857/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Sukseesi_KMA_Akuntansi_agh11h.png"
             alt="Akuntansi">
     </div>
     <?php endif; ?>
@@ -80,28 +80,17 @@
         </button>
     </div>
 
-    <div class="flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
-        <ul class="list-reset lg:flex justify-end flex-1 items-center font-light">
-
-            <li class="mt-2 sm:mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                <a href="<?php echo e(route('home.vote')); ?>"
-                    class="link-button <?php echo e(url()->current() == route('home.vote') || url()->current() == route('home.vote.detail') ? 'active' : ''); ?>">
-                    Vote
-                </a>
-            </li>
-        </ul>
-    </div>
+    
 </nav>
 
-
-<div class="container m-auto mt-20 md:mt-18">
+<div class="container m-auto mt-10 md:mt-18">
     <?php if(!session('finish_vote')): ?>
     <form id="voteform" method="post" action="<?php echo e(route('home.vote.store2')); ?>" class="form-vote">
 
 
         <?php echo csrf_field(); ?>
 
-        <h3 class="text-center text-4xl font-extrabold font-serif italic pt-4 pb-8 mb-4">Silakan Pilih Calon Ketua
+        <h3 class="text-center text-2xl font-extrabold font-serif ">Silakan Pilih Calon Ketua
             Himpunan <?php echo e(strtoupper($jurusan)); ?> sesuai pilihanmu! </h3>
         <div class="flex flex-wrap justify-center">
             <?php $__currentLoopData = $candidates2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

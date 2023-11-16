@@ -27,7 +27,42 @@
         {{--
     </a> --}}
 
-    {{-- <div class="block lg:hidden">
+
+
+    <div class="hidden lg:visible lg:flex">
+        <img class="h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062858/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_pemira_2023_pdbjdj.png"
+            alt="Pemilihan">
+    </div>
+
+    <div class="hidden lg:visible lg:flex">
+        <img class="h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_suksesi_MSA_Manajemen_dan_Bisnis_Digital_tduimn.png"
+            alt="Manajemen">
+    </div>
+    <div class="hidden lg:visible lg:flex">
+        <img class="h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062883/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_DESC_Ekonomi_n34piu.png"
+            alt="Ekonomi">
+    </div>
+    <div class="hidden lg:visible lg:flex">
+        <img class="w-24 h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062857/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Sukseesi_KMA_Akuntansi_agh11h.png"
+            alt="Akuntansi">
+    </div>
+    <div class="hidden lg:visible lg:flex">
+        <img class="w-24 h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_HMEI_Ekonomi_Islam_na0ohz.jpg"
+            alt="Ekonomi Islam">
+    </div>
+
+    <div class="hidden lg:visible lg:flex">
+        <img class="w-24 h-24"
+            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062877/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_senator_pbfd43.png"
+            alt="Senat">
+    </div>
+
+    <div class="block lg:hidden">
         <button id="nav-toggle" class="nav-toggle">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Menu</title>
@@ -51,39 +86,6 @@
             </li>
 
         </ul>
-    </div> --}}
-
-    <div class="hidden md:visible md:flex">
-        <img class="h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062858/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_pemira_2023_pdbjdj.png"
-            alt="Pemilihan">
-    </div>
-
-    <div class="hidden md:visible md:flex">
-        <img class="h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_suksesi_MSA_Manajemen_dan_Bisnis_Digital_tduimn.png"
-            alt="Manajemen">
-    </div>
-    <div class="hidden md:visible md:flex">
-        <img class="h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062883/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_DESC_Ekonomi_n34piu.png"
-            alt="Ekonomi">
-    </div>
-    <div class="hidden md:visible md:flex">
-        <img class="w-24 h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062857/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Sukseesi_KMA_Akuntansi_agh11h.png"
-            alt="Akuntansi">
-    </div>
-    <div class="hidden md:visible md:flex">
-        <img class="w-24 h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062856/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/Logo_Suksesi_HMEI_Ekonomi_Islam_na0ohz.jpg"
-            alt="Ekonomi Islam">
-    </div>
-
-    <div class="hidden md:visible md:flex">
-        <img class="w-24 h-24"
-            src="https://res.cloudinary.com/dezj1x6xp/image/upload/v1700062877/Proyek%20Pemira%20Undip%202023/Logo%20-%20logo/logo_senator_pbfd43.png"
-            alt="Senat">
     </div>
 
 

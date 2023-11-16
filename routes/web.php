@@ -117,6 +117,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function () {
     Route::get('verification', 'Backend\VerificationController@index')->middleware(['permission:read-verification'])->name('verification');
 
     /** route voting member */
-    Route::get('voting', 'Backend\VotingController@index')->middleware(['permission:read-voting'])->name('voting');
-    Route::get('voting/export', 'Backend\VotingController@export')->middleware(['permission:read-voting'])->name('voting.export');
+    Route::get('voting', 'Backend\VotingController@index')->name('voting');
+    Route::get('voting/export', 'Backend\VotingController@export')->name('voting.export');
+
+    Route::get('voting/generate', 'Backend\VotingController@generate')->name('voting.generate');
+
 });
