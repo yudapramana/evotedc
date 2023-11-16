@@ -141,14 +141,14 @@
                             Jumlah Hak Pilih Terpakai
                         </h6>
                         <h3>
-                            <?php $votinCounthim = isset($voting_count_3[$key]) ? $voting_count_3[$key] : 0; ?>
-                            <?php echo e($votinCounthim); ?> (<?php echo e(sprintf('%.2f%%', ($votinCounthim / ($item ?: 1)) * 100)); ?>)
+                            <?php $votinCountsen = isset($voting_count_3[$key]) ? $voting_count_3[$key] : 0; ?>
+                            <?php echo e($votinCountsen); ?> (<?php echo e(sprintf('%.2f%%', ($votinCountsen / ($item ?: 1)) * 100)); ?>)
                         </h3>
                         <h6>
                             Jumlah Hak Pilih Tidak Terpakai
                         </h6>
                         <h3>
-                            <?php echo e($item - $votinCounthim); ?> (<?php echo e(sprintf('%.2f%%', (($item - $votinCounthim) / ($item ?: 1))
+                            <?php echo e($item - $votinCountsen); ?> (<?php echo e(sprintf('%.2f%%', (($item - $votinCountsen) / ($item ?: 1))
                             * 100)); ?>)
                         </h3>
 
@@ -293,7 +293,7 @@
                             <div class="kt-widget5__stats">
                                 <?php $votingCount = isset($voting_count_3[$jurusan]) ? $voting_count_3[$jurusan] : 1;
                                 ?>
-                                <span class="kt-widget5__number text-info text-center"><?php echo e(count($item->voting2)); ?> (<?php echo e(sprintf('%.2f%%', (count($item->voting3) / ($votingCount ?: 1)) * 100)); ?>)</span>
+                                <span class="kt-widget5__number text-info text-center"><?php echo e(count($item->voting3)); ?> (<?php echo e(sprintf('%.2f%%', (count($item->voting3) / ($votingCount ?: 1)) * 100)); ?>)</span>
                                 <span class="kt-widget5__votes">suara</span>
                             </div>
                         </div>

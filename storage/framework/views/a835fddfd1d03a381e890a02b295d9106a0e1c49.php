@@ -146,10 +146,10 @@
 <script src="<?php echo e(asset('__frontend/js/vote-detail.js')); ?>"></script>
 <?php else: ?>
 <script>
-    var t = 60000;
+    var t = 2000;
 
 
-            var counter = 60;
+            var counter = 2;
             var interval = setInterval(function() {
                 counter--;
                 // Display 'counter' wherever you want to display it.

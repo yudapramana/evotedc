@@ -51,18 +51,18 @@ class HomeController extends Controller
 
         // Senator
         $data['candidates3'] = Candidate::orderBy('number')->where('type', 'sen')->get()->groupBy('jurusan');
-        $getMemberCountHim = DB::table('members')
+        $getMemberCountSen = DB::table('members')
             ->select('jurusan', DB::raw('count(*) as total'))
             ->groupBy('jurusan')
             ->get();
 
-        foreach ($getMemberCountHim as $item) {
+        foreach ($getMemberCountSen as $item) {
             $data['member_count_3'][$item->jurusan] = $item->total;
         }
 
 
 
-        $getVotingCountHim = DB::table('votings')
+        $getVotingCountSen = DB::table('votings')
             ->select('members.jurusan', DB::raw('count(*) as total'))
             ->leftJoin('members', 'votings.member_id', '=', 'members.id')
             ->where('votings.type', 'primary')
@@ -70,10 +70,12 @@ class HomeController extends Controller
             ->groupBy('members.jurusan')
             ->get();
 
-        foreach ($getVotingCountHim as $item) {
+        foreach ($getVotingCountSen as $item) {
             $data['voting_count_3'][$item->jurusan] = $item->total;
         }
         // End Senator
+
+        // return $data;
 
         return view('backend.home.index', $data);
     }

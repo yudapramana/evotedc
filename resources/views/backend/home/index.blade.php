@@ -136,14 +136,14 @@
                             Jumlah Hak Pilih Terpakai
                         </h6>
                         <h3>
-                            @php $votinCounthim = isset($voting_count_3[$key]) ? $voting_count_3[$key] : 0; @endphp
-                            {{ $votinCounthim }} ({{ sprintf('%.2f%%', ($votinCounthim / ($item ?: 1)) * 100) }})
+                            @php $votinCountsen = isset($voting_count_3[$key]) ? $voting_count_3[$key] : 0; @endphp
+                            {{ $votinCountsen }} ({{ sprintf('%.2f%%', ($votinCountsen / ($item ?: 1)) * 100) }})
                         </h3>
                         <h6>
                             Jumlah Hak Pilih Tidak Terpakai
                         </h6>
                         <h3>
-                            {{ $item - $votinCounthim }} ({{ sprintf('%.2f%%', (($item - $votinCounthim) / ($item ?: 1))
+                            {{ $item - $votinCountsen }} ({{ sprintf('%.2f%%', (($item - $votinCountsen) / ($item ?: 1))
                             * 100) }})
                         </h3>
 
@@ -285,7 +285,7 @@
                             <div class="kt-widget5__stats">
                                 @php $votingCount = isset($voting_count_3[$jurusan]) ? $voting_count_3[$jurusan] : 1;
                                 @endphp
-                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting2) }} ({{
+                                <span class="kt-widget5__number text-info text-center">{{ count($item->voting3) }} ({{
                                     sprintf('%.2f%%', (count($item->voting3) / ($votingCount ?: 1)) * 100) }})</span>
                                 <span class="kt-widget5__votes">suara</span>
                             </div>
