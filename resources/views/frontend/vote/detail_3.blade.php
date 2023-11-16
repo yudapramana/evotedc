@@ -109,11 +109,11 @@
         <div class="flex flex-wrap justify-center">
             @foreach ($candidates3 as $key => $item)
             <div class="py-2 px-2 w-full md:w-1/2">
-                <div class="object-center h-12">
+                {{-- <div class="object-center h-12">
                     <div class="frame-number">
                         <h1 class="text-5xl m-auto">{{ $item->number }}</h1>
                     </div>
-                </div>
+                </div> --}}
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
                         class="kandidat-container @if ($jurusan == 'Manajemen dan Bisnis Digital S1') manajemen @endif @if ($jurusan == 'Akuntansi S1') akuntansi @endif @if ($jurusan == 'Ekonomi Islam S1') ekonomi-islam @endif @if ($jurusan == 'Ekonomi S1') ekonomi @endif">
@@ -139,11 +139,11 @@
 
             @if (count($candidates3) == 1)
             <div class="py-2 px-2 w-full md:w-1/2">
-                <div class="object-center h-12">
+                {{-- <div class="object-center h-12">
                     <div class="frame-number">
                         <h1 class="text-5xl m-auto">2</h1>
                     </div>
-                </div>
+                </div> --}}
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
                         class="kandidat-container @if ($jurusan == 'Manajemen dan Bisnis Digital S1') manajemen @endif @if ($jurusan == 'Akuntansi S1') akuntansi @endif @if ($jurusan == 'Ekonomi Islam S1') ekonomi-islam @endif @if ($jurusan == 'Ekonomi S1') ekonomi @endif">

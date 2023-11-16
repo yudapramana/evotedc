@@ -105,11 +105,7 @@
         <div class="flex flex-wrap justify-center">
             <?php $__currentLoopData = $candidates3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="py-2 px-2 w-full md:w-1/2">
-                <div class="object-center h-12">
-                    <div class="frame-number">
-                        <h1 class="text-5xl m-auto"><?php echo e($item->number); ?></h1>
-                    </div>
-                </div>
+                
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
                         class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
@@ -135,11 +131,7 @@
 
             <?php if(count($candidates3) == 1): ?>
             <div class="py-2 px-2 w-full md:w-1/2">
-                <div class="object-center h-12">
-                    <div class="frame-number">
-                        <h1 class="text-5xl m-auto">2</h1>
-                    </div>
-                </div>
+                
                 <div class="rounded-large overflow-hidden shadow-lg bg-white">
                     <div
                         class="kandidat-container <?php if($jurusan == 'Manajemen dan Bisnis Digital S1'): ?> manajemen <?php endif; ?> <?php if($jurusan == 'Akuntansi S1'): ?> akuntansi <?php endif; ?> <?php if($jurusan == 'Ekonomi Islam S1'): ?> ekonomi-islam <?php endif; ?> <?php if($jurusan == 'Ekonomi S1'): ?> ekonomi <?php endif; ?>">
