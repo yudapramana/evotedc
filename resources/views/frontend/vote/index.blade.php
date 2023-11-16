@@ -29,9 +29,20 @@
     @if (!\Carbon\Carbon::now()->between($start_time, $end_time))
     <div class="my-10">
         @if (\Carbon\Carbon::now()->lt($end_time))
-        <p data-aos="fade-up">Pemungutan suara belum dibuka.</p>
+        {{-- <p data-aos="fade-up">Pemungutan suara belum dibuka.</p> --}}
+        <div class="pt-6 pb-5">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center text-white">
+                Pemungutan suara belum dibuka</h1>
+
+            </p>
+        </div>
         @else
-        <p data-aos="fade-up">Pemungutan suara telah ditutup.</p>
+        {{-- <p data-aos="fade-up">Pemungutan suara telah ditutup.</p> --}}
+        <div class="pt-6 pb-5">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center text-white">
+                Pemungutan suara telah ditutup</h1>
+            </p>
+        </div>
         @endif
     </div>
     @else
