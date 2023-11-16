@@ -17,8 +17,8 @@ class ScheduleSeeder extends Seeder
     {
         $schedule = Schedule::create([
             'event' => 'Pemilu Raya BEM UNDIP 2023',
-            'start_time' => '2023-11-10 08:00:00',
-            'end_time' => '2023-11-20 16:00:00',
+            'start_time' => '2023-11-17 07:00:00',
+            'end_time' => '2023-11-17 16:00:00',
         ]);
     }
 }

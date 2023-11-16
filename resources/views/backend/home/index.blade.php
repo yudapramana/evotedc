@@ -28,17 +28,21 @@
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-widget14">
                 <div class="kt-widget14__header">
-                    <h3 class="kt-widget14__title">
+                    <span class="kt-widget14__title">
                         Statistik
-                    </h3>
+                    </span>
                     <span class="kt-widget14__desc">
                         Pemilihan
                     </span>
+
+                    <a class="btn btn-label-primary btn-bold  btn-icon-h kt-margin-l-10"
+                        href="/dashboard/voting/generate">Unduh Excel Rekapitulasi Voters</a>
+
                 </div>
                 <div class="kt-widget14__content">
                     <div class="flex mr-5">
                         <h4 class="wiheight">
-                            PEMIRA 2022
+                            PEMIRA 2023
                         </h4>
                         <hr>
                         <h6>
@@ -96,7 +100,7 @@
                 <div class="kt-widget14__content" style="margin-top:50px !important;">
                     <div class="flex mr-5" style="color:white !important;">
                         <h4 class="wiheight">
-                            PEMIRA 2022
+                            PEMIRA 2023
                         </h4>
                         <hr style="border-top: none !important;">
                         <h6>
